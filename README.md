@@ -1,4 +1,4 @@
-# 🏠 Marrão de Aluguel
+# 🏠 Marido de Aluguel
 
 > Projeto de conclusão do **3º semestre** do curso de Desenvolvimento Web.
 
