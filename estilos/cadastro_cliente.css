@@ -18,6 +18,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
  
 /* ---------- Header ---------- */
@@ -60,14 +61,15 @@ main h2 {
   padding: 32px 36px 28px;
   width: 100%;
   max-width: 520px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  margin: 0 auto;
+  box-shadow: 0 8px 22px rgba(18, 42, 76, 0.10);
 }
  
 /* ---------- Form Layout ---------- */
 #formulario {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2px;
 }
  
 /* ---------- Labels ---------- */
@@ -93,10 +95,10 @@ main h2 {
 #formulario textarea {
   width: 100%;
   padding: 8px 12px;
-  border: 1px solid #cccccc;
+  border: 1px solid #c6d1de;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   color: #333333;
   background-color: #fafafa;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -178,6 +180,7 @@ label[for="descricao"] {
 #botaoEnviar,
 #botaoCancelar {
   padding: 10px 32px;
+  min-height: 42px;
   border: none;
   border-radius: 6px;
   font-family: 'Poppins', sans-serif;
@@ -202,6 +205,12 @@ label[for="descricao"] {
 #botaoCancelar:hover {
   opacity: 0.88;
   transform: translateY(-1px);
+}
+
+#botaoEnviar:focus-visible,
+#botaoCancelar:focus-visible {
+  outline: 3px solid rgba(26, 115, 232, 0.28);
+  outline-offset: 2px;
 }
  
 #botaoEnviar:active,
@@ -231,8 +240,21 @@ label[for="descricao"] {
  
 /* ---------- Responsive ---------- */
 @media (max-width: 480px) {
+  header {
+    padding: 10px 14px;
+  }
+
+  header .logo {
+    height: 44px;
+  }
+
+  main {
+    padding: 24px 12px 32px;
+  }
+
   .container {
     padding: 24px 18px 20px;
+    border-radius: 8px;
   }
  
   .checkbox-group {
@@ -241,5 +263,37 @@ label[for="descricao"] {
  
   main h2 {
     font-size: 1.15rem;
+    margin-bottom: 14px;
+  }
+
+  #formulario label:not(.checkbox-group label) {
+    margin-top: 12px;
+    font-size: 0.8rem;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #botaoEnviar,
+  #botaoCancelar {
+    width: 100%;
+    padding: 10px 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  main {
+    padding: 28px 14px 36px;
+  }
+
+  .container {
+    max-width: 620px;
+    padding: 26px 24px 24px;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
   }
 }

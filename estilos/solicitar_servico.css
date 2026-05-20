@@ -17,6 +17,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
  
 /* =============================================
@@ -94,7 +95,8 @@ main > h2 {
   padding: 28px 32px 24px;
   width: 100%;
   max-width: 540px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  margin: 0 auto;
+  box-shadow: 0 8px 22px rgba(18, 42, 76, 0.10);
 }
  
 /* =============================================
@@ -103,11 +105,12 @@ main > h2 {
 #formulario {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
  
 /* Section titles inside form */
 #formulario h2 {
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #1a73e8;
   margin-top: 4px;
@@ -116,7 +119,7 @@ main > h2 {
  
 /* Labels */
 #formulario label {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: #222;
   margin-top: 10px;
@@ -132,10 +135,10 @@ main > h2 {
 #formulario textarea {
   width: 100%;
   padding: 7px 10px;
-  border: 1px solid #cccccc;
+  border: 1px solid #c6d1de;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.86rem;
   color: #333;
   background-color: #fafafa;
   outline: none;
@@ -186,6 +189,7 @@ main > h2 {
 #botaoCancelar,
 #botaoSolicitarServico {
   padding: 10px 28px;
+  min-height: 42px;
   border: none;
   border-radius: 6px;
   font-family: 'Poppins', sans-serif;
@@ -210,13 +214,36 @@ main > h2 {
   opacity: 0.85;
   transform: translateY(-1px);
 }
+
+#botaoCancelar:focus-visible,
+#botaoSolicitarServico:focus-visible {
+  outline: 3px solid rgba(26, 115, 232, 0.28);
+  outline-offset: 2px;
+}
  
 /* =============================================
    RESPONSIVO
    ============================================= */
 @media (max-width: 480px) {
+  header {
+    padding: 10px 14px;
+  }
+
+  header .logo {
+    height: 44px;
+  }
+
+  main {
+    padding: 20px 12px 32px;
+  }
+
+  main > h2 {
+    font-size: 1.05rem;
+  }
+
   .container {
     padding: 20px 16px;
+    border-radius: 8px;
   }
  
   .button-row {
@@ -227,6 +254,22 @@ main > h2 {
   #botaoCancelar,
   #botaoSolicitarServico {
     width: 100%;
+    padding: 10px 14px;
     text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  main {
+    padding: 24px 14px 36px;
+  }
+
+  .container {
+    max-width: 620px;
+    padding: 24px 22px;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
   }
 }
